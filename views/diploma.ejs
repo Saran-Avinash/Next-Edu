@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>college details</title>
+    <link rel="stylesheet" href="collegestyle.css">
+    <style>
+        .hide{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Diploma Colleges</h1>
+    <div class="input">
+        <input type="text" id="user-input" style="margin-left:auto;">
+        <button id="search">search</button>
+    </div><br><br>
+
+<div class="colleges-container">
+
+    <div class="college" onclick="redirectTo1()">
+        <img src="college1.jpg" alt="college 1">
+        <h2 class="name">Annamalai University</h2><br>
+        <p class="location">Location : Annamalainagar , TamilNadu</p>
+    </div>
+    
+    <div class="college" onclick="redirectTo2()">
+        <img src="college2.jpg" alt="college 2">
+        <h2 class="name">Academy of Maritime Education and Training</h2><br>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+    
+    <div class="college" onclick="redirectTo3()">
+        <img src="college3.jpg" alt="college 3">
+        <h2 class="name">Thiruvalluvar University</h2><br>
+        <p class="location">Location : Vellore , TamilNadu</p>
+    </div>
+ 
+    <div class="college" onclick="redirectTo4()">
+        <img src="college4.jpg" alt="college 4">
+        <h2 class="name">Murugappa Polytechnic College</h2><br>
+        <p class="location">Location : Tiruvallore , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo5()">
+        <img src="college5.jpg" alt="college 5">
+        <h2 class="name">CIPET Chennai</h2><br>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo6()">
+        <img src="college6.jpg" alt="college 6">
+        <h2 class="name">Aalim Muhammed Salegh College Of Engineering</h2><br>
+        <p class="location">Location : Avadi , TamilNadu</p>
+    </div>
+ 
+    <div class="college" onclick="redirectTo7()">
+        <img src="college4.jpg" alt="college 7">
+        <h2 class="name">Gandhigram Rural Institute</h2><br>
+        <p class="location">Location : Dindigul , TamilNadu</p>
+    </div>
+    
+    <div class="college" onclick="redirectTo8()">
+        <img src="college5.jpg" alt="college 8">
+        <h2 class="name">Dr.N.G.P. Arts and Science College</h2><br>
+        <p class="location">Location : Coimbatore , TamilNadu</p>
+    </div>
+    
+    <div class="college" onclick="redirectTo9()">
+        <img src="college6.jpg" alt="college 9">
+        <h2 class="name">Ayya Nadar Janaki Ammal College</h2><br>
+        <p class="location">Location : Virudhunagar , TamilNadu</p>
+    </div>
+</div>
+<script>
+    function redirectTo1() {
+        window.location.href = "https://annamalaiuniversity.ac.in/index.php";
+    }
+    function redirectTo2() {
+        window.location.href = "https://www.ametuniv.ac.in/";
+    }
+    function redirectTo3() {
+        window.location.href = "https://www.tvu.edu.in/";
+    }
+    function redirectTo4() {
+        window.location.href = "https://murugappapoly.ac.in/";
+    }
+    function redirectTo5() {
+        window.location.href = "https://www.cipet.gov.in/centres/cipet-chennai/introduction.php";
+    }
+    function redirectTo6() {
+        window.location.href = "https://www.aalimec.ac.in/";
+    }
+    function redirectTo7() {
+        window.location.href = "https://www.ruraluniv.ac.in/academics?content=programmes";
+    }
+    function redirectTo8() {
+        window.location.href = "https://www.drngpasc.ac.in/";
+    }
+    function redirectTo9() {
+        window.location.href = "https://www.anjaconline.org/";
+    }
+    let input_value = document.getElementById("user-input");
+            let btn = document.getElementById("search");
+            btn.addEventListener("click", search, false);
+
+            function search(){
+                let card = document.querySelectorAll(".college");
+                card.forEach((element)=> {
+                    console.log(element);
+                    let name = element.querySelector(".name");
+                    const isVisible = name.textContent.toLowerCase().includes(input_value.value.toLowerCase());
+                    if(!isVisible){
+                        element.classList.add("hide");
+                    }
+                    else{
+                        element.classList.remove("hide");
+                        
+                    }
+                })
+            }
+            
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+HackBuzz'24 - Idea Presentation.pptx
+node_modules/
+

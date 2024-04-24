@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Edu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+             
+        }
+
+        p{
+            color:black;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+         
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 3rem;
+        }
+        .logo{
+            display: flex;
+            gap: 10px;
+            height: 100%;
+            align-items: center;
+        }
+        .logo h1{
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #b3c7f9;
+        }
+
+        header nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: hsl(0, 0%, 90%);
+            height: 60px;
+            padding: 0 20px; /* Add padding to the header */
+            box-sizing: border-box; /* Ensure padding doesn't affect overall width */
+        }
+
+        .logo img{
+            width: 40px; /* Set the width of the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .user p{
+            padding: 0 20px;
+        }
+
+        .initial-section{
+            display: flex;
+            justify-content: center;
+            height: 50%;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+
+        .container{
+            margin-bottom: 20px; /* Add space between the label and select */
+        }
+
+        .content{
+            display: flex;
+            justify-content: center;
+        }
+        label{
+            font-size: 2.5rem;
+        }
+
+        select{
+            font-size: 1.5rem;
+            margin-left: 50px;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            font-size: 1.5rem;
+        }
+        
+        
+        .card-container{
+            flex-wrap: wrap;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .card{
+            width: 300px;
+            height: 300px;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card p{
+            padding: 20px;
+            font-size: 2rem;
+        }
+
+        .opportunities{
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="logo"> <!-- Adjust the path to your logo -->
+                <h1>Next<span style="color:hsl(0, 0%, 50%)">Edu</span></h1>
+            </div>
+            <div class="user">
+                <p class="userName">Hey There!!</p>
+            </div>
+        </nav>
+    </header>
+
+    <section class="initial-section"> 
+        <div class="container">
+            <label for="">Select Who You are now?</label>
+            <select name="" id="options">
+                <option value="Select">Select</option>
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="UG">UG</option>
+            </select>
+        </div>
+        <button style="margin-bottom:5rem;" id="go">Go</button>
+        <div class="opportunities" >
+          <a href="/flow1.pdf" download>Opportunities</a>
+        </div>
+    </section>
+
+    
+   
+    <section class="content">
+        <div id="container"></div>
+    </section>
+
+    <section class="12&ug">
+        <div id="container-2"></div>
+    </section>
+
+    <script defer>
+        // Your JavaScript code here
+        let diploma = "<a href='http://localhost:5000/diploma'><div class='card'><img src='/diploma.png' alt='diploma'><p>Diploma</p> </div></a>";
+        let twelth = "<a href='http://localhost:5000/12th'><div class='card'><img src='/school.png' alt='12th'><p>Twelveth</p> </div></a>";
+
+
+        let engineering = "<a href='http://localhost:5000/engineering'><div class='card'><img src='/engineers.png' alt='engineering'><p>Engineering</p> </div></a>";
+
+
+        let medical = "<a href='http://localhost:5000/medical'><div class='card'><img src='/medical-symbol.png' alt='medical'><p>Medical</p> </div></a>";
+
+        let arts = "<a href='http://localhost:5000/arts&science'><div class='card'><img src='/colors.png' alt='arts'><p>Arts & Science</p> </div></a>";
+
+        let management = "<a href='http://localhost:5000/management'><div class='card'><img src='/manager.png' alt='management'><p>Management</p> </div></a>";
+        let law = "<a href='http://localhost:5000/law'><div class='card'><img src='/law.png' alt='law'><p>Law</p> </div></a>";
+        let architecture = "<a href='http://localhost:5000/architecture'><div class='card'><img src='/blueprint.png' alt='architecture'><p>Architecture</p> </div></a>";
+
+
+
+        console.log("script is running");
+
+
+        let select = document.getElementById("options");
+        let content_box = document.getElementById("container"); 
+        
+    
+        let go=document.getElementById("go");
+        
+        go.addEventListener("click", fun, false);
+        
+        function fun() {
+            console.log("fun");
+            let selectedOption = select.value;
+            
+            switch(selectedOption){
+                case "10th":
+                 fun_10th();
+                 break;
+                case "12th":
+                 fun_12th();
+                    break;
+                case "UG":
+                    fun_UG();
+                    break;
+                }
+            }
+            
+            function fun_10th(){
+                
+                content_box.innerHTML = `<div class='card-container'> <a href='http://localhost:5000/diploma'> ${diploma} </a> ${twelth}</div>`;
+            }   
+
+            function fun_12th(){
+                content_box.innerHTML = `<h1>Bio Maths</h1> <div class='card-container'> ${engineering} ${medical} ${law} ${architecture} ${management}`;
+
+                content_box.innerHTML += `<h1>Cs Maths</h1> <div class='card-container'> ${engineering} ${law} ${architecture} ${management}`;
+
+                    content_box.innerHTML += `<h1>Arts & Science</h1> <div class='card-container'> ${law} ${architecture} ${management}`;
+                
+            }
+            
+            function fun_UG(){
+                content_box.innerHTML = `<h1> PG </h1> <div class='card-container'> ${medical} ${engineering} ${arts}`;
+            }
+                
+                
+    </script>
+</body>
+</html>

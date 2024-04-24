@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/loginstyle.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="/login" method="post">
+        <section class="section">
+            <div class="container">
+                <h1 class="h1"> Login using Email</h1>
+                <div class="email">
+                    <label htmlFor="" >Email</label><br />
+                    <input type="email" name="email" id="user-email"/>
+                </div>
+                <div class="password">
+                    <label htmlFor="">Password</label><br />
+                    <input type="password" name="password" id="user-password"/>
+                </div>
+                <button class="button" type="submit">
+                    Login
+                </button>
+                <p>New user ? You can <a href="http://localhost:5000/register">Sign in</a> here</p>
+            </div>
+        </section>
+    </form>
+</body>
+</html>

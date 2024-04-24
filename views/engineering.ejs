@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="collegestyle.css">
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Engineering Colleges</h1>
+    <div class="input">
+        <input type="text" id="user-input">
+        <button type="submit" id="search">Search</button>
+         
+        <select id="select-filter" style="margin-left:auto; margin-right: 10px;">
+            <option value="">Select</option>
+            <option value="jee">Jee</option>
+            <option value="tnea">tnea</option>
+            <option value="Management">Management</option>
+            <option value="special-entrance">Special Entrance</option>
+        </select>
+
+        <select name="" id="location" style="margin-right: 10px;">
+            <option value="">Select</option>
+            <option value="Karur">Karur</option>
+            <option value="Erode">Erode</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Trichy">Trichy</option>
+            <option value=""></option>
+        </select>
+        <button id="filter">Filter</button>
+        
+    </div> 
+        <div class="colleges-container">
+            <div class="college" onclick="redirectTo1()">
+                <h2 class="name">INDIAN INSTITUTE OF TECHNOLOGY MADRAS</h2><br>
+                <p>NAAC Grade : NA</p>
+                <p>NIRF Ranking : 1</p>
+                <p class="admission">Mode of Admission : JEE , TNEA</p>
+                <p class="location">Location : Chennai , TamilNadu</p>
+            </div>
+            
+            <div class="college" onclick="redirectTo2()">
+                <h2 class="name">NIT , Tiruchi</h2><br>
+                <p>NAAC Grade : NA</p>
+                <p>NIRF Ranking : 9</p>
+                <p class="admission">Mode of Admission : JEE , TNEA</p>
+                <p class="location">Location : Trichy , TamilNadu</p>
+            </div>
+            
+            <div class="college" onclick="redirectTo3()">
+                <h2 class="name">ANNA UNIVERSITY CHENNAI , CEG CAMPUS</h2><br>
+                <p>NAAC Grade : NA</p>
+                <p>NIRF Ranking : 14</p>
+                <p class="admission">Mode of Admission : TNEA</p>
+                <p class="location">Location : Chennai , TamilNadu</p>
+            </div>
+         
+            <div class="college" onclick="redirectTo4()">
+                <h2 class="name">PSG COLLEGE OF TECHNOLOGY</h2><br>
+                <p>NAAC Grade : NA</p>
+                <p>NIRF Ranking : 49</p>
+                <p class="admission">Mode of Admission : TNEA , MANAGEMENT</p>
+                <p class="location">Location : Coimbatore , TamilNadu</p>
+            </div>
+        
+            <div class="college" onclick="redirectTo5()">
+                <h2 class="name">SRM INSTITUTE OF TECHNOLOGY</h2><br>
+                <p>NAAC Grade : A++</p>
+                <p>NIRF Ranking : 41</p>
+                <p class="admission">Mode of Admission : TNEA , MANAGEMENT</p>
+                <p class="location">Location : Kanchipuram , TamilNadu</p>
+            </div>
+        
+            <div class="college" onclick="redirectTo6()">
+                <h2 class="name">ANNA UNIVERSITY CHENNAI , MIT CAMPUS</h2><br>
+                <p>NAAC Grade : NA</p>
+                <p>NIRF Ranking : NA</p>
+                <p class="admission">Mode of Admission : TNEA</p>
+                <p class="location">Location : Chennai , TamilNadu</p>
+            </div>
+         
+            <div class="college" onclick="redirectTo7()">
+                <h2 class="name">COIMBATORE INSTITUTE OF TECHNOLOGY</h2><br>
+                <p>NAAC Grade : A</p>
+                <p>NIRF Ranking : 90</p>
+                <p class="admission">Mode of Admission : TNEA</p>
+                <p class="location">Location : Coimbatore , TamilNadu</p>
+            </div>
+        
+            <div class="college" onclick="redirectTo8()">
+                <h2 class="name">SRI SAIRAM COLLEGE OF ENGINEERING</h2><br>
+                <p>NAAC Grade : A+</p>
+                <p>NIRF Ranking : 108</p>
+                <p class="admission">Mode of Admission : TNEA , MANAGEMENT</p>
+                <p class="location">Location : Chennai , TamilNadu</p>
+            </div>
+        
+            <div class="college" onclick="redirectTo9()">
+                <h2 class="name">ANNA UNIVERSITY CHENNAI , ACT CAMPUS</h2><br>
+                <p>NAAC Grade : NA</p>
+                <p>NIRF Ranking : NA</p>
+                <p class="admission">Mode of Admission : TNEA</p>
+                <p class="location">Location : Chennai , TamilNadu</p>
+            </div>
+        </div>
+
+        <script>
+
+            let loc = document.getElementById("location");
+            let input_value = document.getElementById("user-input");
+            let btn = document.getElementById("search");
+            btn.addEventListener("click", search, false);
+
+            function search(){
+                let card = document.querySelectorAll(".college");
+                card.forEach((element)=> {
+                    console.log(element);
+                    let name = element.querySelector(".name");
+                    const isVisible = name.textContent.toLowerCase().includes(input_value.value.toLowerCase());
+                    if(!isVisible){
+                        element.classList.add("hide");
+                    }
+                    else{
+                        element.classList.remove("hide");
+                        
+                    }
+                })
+            }
+            
+            let filter = document.getElementById("select-filter");
+            let filter_button = document.getElementById("filter");
+            filter_button.addEventListener("click", ()=>{
+                let card = document.querySelectorAll(".college");
+                card.forEach((element)=>{
+                    let district = element.querySelector(".location");
+                    let ad = element.querySelector(".admission");
+
+                    let isVisible;
+
+                    if(loc.value == ""){
+                        isVisible = ad.textContent.toLowerCase().includes(filter.value.toLowerCase());
+                    }
+                    else if(filter.value == ""){
+                        isVisible = district.textContent.toLowerCase().includes(loc.value.toLowerCase());
+                    }
+                    else{
+                        isVisible =  district.textContent.toLowerCase().includes(loc.value.toLowerCase()) && ad.textContent.toLowerCase().includes(filter.value.toLowerCase());
+                    }
+                  
+                    if(!isVisible){
+                        element.classList.add("hide");
+                    }
+                    else{
+                        element.classList.remove("hide");
+                    }
+                })
+            },false);
+            
+
+        
+        </script>
+</body>
+</html>

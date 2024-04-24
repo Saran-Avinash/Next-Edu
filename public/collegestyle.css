@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #b3c7f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input input[type="text"] {
+    padding: 8px;
+    width: 40%;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.input button {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input button:hover {
+    background-color: #4cae4c;
+}
+
+.colleges-container {
+    display: flex;
+     gap: 10px;
+    flex-wrap: wrap;
+}
+
+.college {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 200px;
+    flex-basis: calc(30% - 20px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.college:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.college h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.college p {
+    margin: 5px 0;
+}
+
+.college img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}

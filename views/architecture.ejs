@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>college details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #b3c7f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .input {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .input input[type="text"] {
+            padding: 8px;
+            width: 40%;
+            margin-right: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .input button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .input button:hover {
+            background-color: #4cae4c;
+        }
+        
+        .colleges-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .college {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            height: 200px;
+            flex-basis: calc(30% - 20px);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .college:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .college h2 {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+        
+        .college p {
+            margin: 5px 0;
+        }
+        
+        .college img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Architecture Colleges</h1>
+    <div class="input">
+        <input type="text" id="user-input" style="margin-left:auto;" id="user-input">
+        <button id="search">search</button>
+    </div><br><br>
+
+<div class="colleges-container">
+
+    <div class="college" onclick="redirectTo1()">
+        <!-- <img src="college1.jpg" alt="college 1"> -->
+        <h2 class="name">Department of Architecture, National Institute of Technology</h2><br>
+        <p>NIRF Ranking : 8</p>
+        <p class="location">Location : Tiruchirappali , TamilNadu</p>
+    </div>
+    
+    <div class="college" onclick="redirectTo2()">
+        <!-- <img src="college2.jpg" alt="college 2"> -->
+        <h2 class="name">School of Architecture Thiagarajar College of Engineering</h2><br>
+        <p>NIRF Ranking : 17</p>
+        <p class="location">Location : Madurai , TamilNadu</p>
+    </div>
+    
+    <div class="college" onclick="redirectTo3()">
+        <!-- <img src="college3.jpg" alt="college 3"> -->
+        <h2 class="name">School of Architecture and Planning - Anna University</h2><br>
+        <p>NIRF Ranking : 18</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+ 
+    <div class="college" onclick="redirectTo4()">
+        <!-- <img src="college4.jpg" alt="college 4"> -->
+        <h2 class="name">School of Architecture, Hindustan Institute of Technology and Science</h2><br>
+        <p>NIRF Ranking : 20</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo5()">
+        <!-- <img src="college5.jpg" alt="college 5"> -->
+        <h2 class="name">Crescent School of Architecture, B.S. Abdur Rahman Crescent Institute of Sciece and Technology</h2><br>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo6()">
+        <!-- <img src="college6.jpg" alt="college 6"> -->
+        <h2 class="name">Faculty of Architecture, Dr. M.G.R. Educational and Research Institute</h2><br>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+ 
+    <div class="college" onclick="redirectTo7()">
+        <!-- <img src="college7.jpg" alt="college 7"> -->
+        <h2 class="name">Faculty - Architecture and Interior Design - SRM University</h2><br>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo8()">
+        <!-- <img src="college8.jpg" alt="college 8"> -->
+        <h2 class="name">Faculty of Civil Engineering and Architecture, Sathyabama Institute of Science and Technology</h2><br>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo9()">
+        <!-- <img src="college9.jpg" alt="college 9"> -->
+        <h2 class="name">Excel College of Architecture and Planning</h2><br>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Namakal , TamilNadu</p>
+    </div>
+</div>
+<script>
+    function redirectTo1() {
+        window.location.href = "https://www.nitt.edu/home/academics/departments/architecture/";
+    }
+search
+
+    function redirectTo2() {
+        window.location.href = "https://www.tce.edu/academics/departments/architecture";
+    }
+    function redirectTo3() {
+        window.location.href = "https://www.annauniv.edu/Architecture/";
+    }
+    function redirectTo4() {
+        window.location.href = "https://hindustanuniv.ac.in/bachelor-of-architecture-barch/";
+    }
+    function redirectTo5() {
+        window.location.href = "https://www.crescentschoolofarchitecture.com/";
+    }
+    function redirectTo6() {
+        window.location.href = "https://www.drmgrdu.ac.in/course-details.php?academic=6&department=19";
+    }
+    function redirectTo7() {
+        window.location.href = "https://www.srmist.edu.in/department/department-of-architecture/";
+    }
+    function redirectTo8() {
+        window.location.href = "https://www.sathyabama.ac.in/faculty/hod/drspackialakshmi-civil";
+    }
+    function redirectTo9() {
+        window.location.href = "https://excelinstitutions.com/excel_arch/";
+    }
+
+    let input_value = document.getElementById("user-input");
+    let btn = document.getElementById("search");
+    btn.addEventListener("click", search, false);
+
+    function search(){
+        let card = document.querySelectorAll(".college");
+        card.forEach((element)=> {
+            console.log(element);
+            let name = element.querySelector(".name");
+            const isVisible = name.textContent.toLowerCase().includes(input_value.value.toLowerCase());
+            if(!isVisible){
+                element.classList.add("hide");
+            }
+            else{
+                element.classList.remove("hide");
+                
+            }
+        })
+    }
+
+
+ 
+</script>
+
+
+</body>
+</html>

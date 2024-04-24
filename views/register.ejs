@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Register</h1>
+     
+    <form action="/register" method="post">
+        <section class="section">
+            <div class="container">
+                <h1 class="h1"> Register</h1>
+                 
+                <div class="email">
+                    <label htmlFor="" >Email</label><br />
+                    <input type="email" name="email" id="user-email"/>
+                </div>
+                <div class="password">
+                    <label htmlFor="">Password</label><br />
+                    <input type="password" name="password" id="user-password"/>
+                </div>
+                <button class="button" type="submit">
+                    Register
+                </button>
+                <p>Already a user ? You can <a href="http://localhost:5000/login">Log in</a> here</p>
+            </div>
+        </section>
+    </form>
+</body>
+</html>

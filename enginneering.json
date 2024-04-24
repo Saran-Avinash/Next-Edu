@@ -1,0 +1,16 @@
+[
+
+    {
+
+        "name" : "kongu Engineering College",
+        "admission" : ["tnea", "management"]
+    },
+    {
+        "name" : "iit madras", 
+        "admission" : ["jee"]
+    },
+    {
+        "name" : "srm institute of technology",
+        "admission" : ["tnea", "management"]
+    }
+]

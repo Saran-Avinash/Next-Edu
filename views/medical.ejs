@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>college details</title>
+    <link rel="stylesheet" href="collegestyle.css">
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medical Colleges</h1>
+    <div class="input">
+        <input type="text" style="margin-left:auto;" id="user-input">
+        <button id="search">search</button>
+    </div><br><br>
+
+<div class="colleges-container">
+    <div class="college" onclick="redirectTo1()">
+        <img src="college1.jpg" alt="college 1">
+        <h2 class="name">Christian Medical College</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : 3</p>
+        <p class="location">Location : Vellore , TamilNadu</p>
+    </div>
+    
+    <div class="college" onclick="redirectTo2()">
+        <img src="college2.jpg" alt="college 2">
+        <h2 class="name">Amrita School of Medicine, Amrita Vishwa Vidyapeetham</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : 7</p>
+        <p class="location">Location : Coimbatore , TamilNadu</p>
+    </div>
+    
+    <div class="college" onclick="redirectTo3()">
+        <img src="college3.jpg" alt="college 3">
+        <h2 class="name">Madras Medical College and Government Genereal Hospital</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : 12</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+ 
+    <div class="college" onclick="redirectTo4()">
+        <img src="college4.jpg" alt="college 4">
+        <h2 class="name">Sri Ramachandra Institute of Higher Education and Research</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : 13</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo5()">
+        <img src="college5.jpg" alt="college 5">
+        <h2 class="name">Stanley Medical College</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Chennai , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo6()">
+        <img src="college6.jpg" alt="college 6">
+        <h2 class="name">Coimbatore Medical College</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Coimbatore , TamilNadu</p>
+    </div>
+ 
+    <div class="college" onclick="redirectTo7()">
+        <img src="college7.jpg" alt="college 7">
+        <h2 class="name">PSG Institute of Medical Science and Research</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : 28</p>
+        <p class="location">Location : Coimbatore , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo8()">
+        <img src="college8.jpg" alt="college 8">
+        <h2 class="name">Madurai Medical College</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Madurai , TamilNadu</p>
+    </div>
+
+    <div class="college" onclick="redirectTo9()">
+        <img src="college9.jpg" alt="college 9">
+        <h2 class="name">Chengalpattu Medical College</h2><br>
+        <p>NAAC Grade : NA</p>
+        <p>NIRF Ranking : NA</p>
+        <p class="location">Location : Chengalpattu , TamilNadu</p>
+    </div>
+</div>
+<script>
+    function redirectTo1() {
+        window.location.href = "https://www.cmch-vellore.edu/";
+    }
+    function redirectTo2() {
+        window.location.href = "https://www.amrita.edu/school/medicine/";
+    }
+    function redirectTo3() {
+        window.location.href = "https://www.tnmgrmu.ac.in/index.php/affiliated-colleges-institutions/mbbs-college-location/madras-medical-college-and-hospital.html";
+    }
+    function redirectTo4() {
+        window.location.href = "https://www.sriramachandra.edu.in/";
+    }
+    function redirectTo5() {
+        window.location.href = "https://www.stanleymedicalcollege.in/";
+    }
+    function redirectTo6() {
+        window.location.href = "https://collegedunia.com/college/10351-coimbatore-medical-college-cmc-coimbatore/";
+    }
+    function redirectTo7() {
+        window.location.href = "https://psgimsr.ac.in/";
+    }
+    function redirectTo8() {
+        window.location.href = "https://madurai.nic.in/public-utility/government-medical-college-madurai/";
+    }
+    function redirectTo9() {
+        window.location.href = "https://www.cmccpt.ac.in/";
+    }
+    let input_value = document.getElementById("user-input");
+    let btn = document.getElementById("search");
+    btn.addEventListener("click", search, false);
+
+    function search(){
+        let card = document.querySelectorAll(".college");
+        card.forEach((element)=> {
+            console.log(element);
+            let name = element.querySelector(".name");
+            const isVisible = name.textContent.toLowerCase().includes(input_value.value.toLowerCase());
+            if(!isVisible){
+                element.classList.add("hide");
+            }
+            else{
+                element.classList.remove("hide");
+                
+            }
+        })
+    }
+    
+</script>
+
+
+</body>
+</html>
